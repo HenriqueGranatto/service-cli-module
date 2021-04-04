@@ -1,3 +1,5 @@
+const path = require('path')
+
 module.exports = (toolbox) =>
 {
     if(['module:install', 'module:update', 'module:uninstall'].indexOf(toolbox.parameters.command) >=0)
@@ -9,7 +11,7 @@ module.exports = (toolbox) =>
 const validateModuleCommand = (toolbox, moduleList) =>
 {
     toolbox.print.info("- Verificando módulo(s)")
-    let modules = toolbox.filesystem.read('modules.json', 'json')
+    let modules = toolbox.filesystem.read(path.resolve(__dirname, '..', 'modules.json'), 'json')
     
     if(!modules)
     {
