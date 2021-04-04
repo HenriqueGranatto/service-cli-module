@@ -1,3 +1,5 @@
+const path = require('path')
+
 module.exports = (toolbox) =>
 {
     toolbox.updateListModules = updateListModules
@@ -6,7 +8,7 @@ module.exports = (toolbox) =>
 
 const showListModules = (toolbox) =>
 {
-    let modules = toolbox.filesystem.read('modules.json', 'json')
+    let modules = toolbox.filesystem.read(path.resolve(__dirname, '..', 'modules.json'), 'json')
     let list = [['Name', 'Package', 'Install', 'Link']]
 
     modules.map((plugin) => {
