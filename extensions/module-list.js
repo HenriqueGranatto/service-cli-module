@@ -17,10 +17,3 @@ const showListModules = (toolbox) =>
 
     toolbox.print.table(list, { format: 'lean' })
 }
-
-const updateListModules = async (toolbox) =>
-{
-  toolbox.print.info(await toolbox.system.run('git fetch'))
-  toolbox.print.info(await toolbox.system.run('git checkout origin/master -- modules.json'))
-  toolbox.print.success('Lista de módulos atualizada com sucesso')
-}

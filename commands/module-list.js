@@ -4,7 +4,6 @@ const command = {
     run: async toolbox => {
       if(toolbox.parameters.options.update)
       {
-          await toolbox.updateListModules(toolbox)
           process.exit(0)
       }
 
