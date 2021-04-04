@@ -1,0 +1,12 @@
+[
+    {
+        "name": "kafka",
+        "package": "service-cli-kafka",
+        "link": "https://github.com/HenriqueGranatto/service-cli-kafka.git"
+    },
+    {
+        "name": "api",
+        "package": "service-cli-api",
+        "link": "https://github.com/HenriqueGranatto/service-cli-api.git"
+    }
+]
