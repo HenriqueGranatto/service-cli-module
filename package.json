@@ -2,10 +2,10 @@
   "license": "ISC",
   "version": "1.0.0",
   "main": "index.js",
-  "name": "service-cli-api",
+  "name": "service-cli-module",
   "author": "Henrique Granatto",
   "description": "Gerenciador de módulos do service-cli.",
-  "homepage": "https://github.com/HenriqueGranatto/service-cli-api#readme",
+  "homepage": "https://github.com/HenriqueGranatto/service-cli-module#readme",
   "directories": {
     "doc": "docs",
     "commands": "commands",
@@ -14,10 +14,10 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/HenriqueGranatto/service-cli-api.git"
+    "url": "git+https://github.com/HenriqueGranatto/service-cli-module.git"
   },
   "bugs": {
-    "url": "https://github.com/HenriqueGranatto/service-cli-api/issues"
+    "url": "https://github.com/HenriqueGranatto/service-cli-module/issues"
   },
   "dependencies": {}
 }

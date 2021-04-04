@@ -1,3 +1,3 @@
-# Command Reference for service-cli-api
+# Command Reference for service-cli-module
 
 TODO: Add your command reference here

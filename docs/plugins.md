@@ -1,10 +1,10 @@
-# Plugin guide for service-cli-api
+# Plugin guide for service-cli-module
 
-Plugins allow you to add features to service-cli-api, such as commands and
+Plugins allow you to add features to service-cli-module, such as commands and
 extensions to the `toolbox` object that provides the majority of the functionality
-used by service-cli-api.
+used by service-cli-module.
 
-Creating a service-cli-api plugin is easy. Just create a repo with two folders:
+Creating a service-cli-module plugin is easy. Just create a repo with two folders:
 
 ```
 commands/
@@ -42,6 +42,6 @@ This is then accessible in your plugin's commands as `toolbox.bar`.
 
 # Loading a plugin
 
-To load a particular plugin (which has to start with `service-cli-api-*`),
-install it to your project using `npm install --save-dev service-cli-api-PLUGINNAME`,
-and service-cli-api will pick it up automatically.
+To load a particular plugin (which has to start with `service-cli-module-*`),
+install it to your project using `npm install --save-dev service-cli-module-PLUGINNAME`,
+and service-cli-module will pick it up automatically.

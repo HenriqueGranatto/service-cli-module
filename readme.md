@@ -1,6 +1,6 @@
-# service-cli-api CLI
+# service-cli-module CLI
 
-A CLI for service-cli-api.
+A CLI for service-cli-module.
 
 ## Customizing your CLI
 
