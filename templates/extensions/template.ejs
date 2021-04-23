@@ -1,0 +1,44 @@
+module.exports = (toolbox) =>
+{
+    if(toolbox.parameters.command == 'add:<%- props.name %>')
+    {
+        toolbox.readTemplate = readTemplate
+        toolbox.createModule = createModule
+    }
+}
+
+const readTemplate = async (toolbox, module) =>
+{
+    toolbox.print.info("- Procurando template")
+    module.template.data = toolbox.filesystem.read(module.template.file)
+
+    if(!module.template.data)
+    {
+        toolbox.print.error(`- Template não encontrado: ${module.template.file}`)
+        process.exit(0)
+    }
+
+    toolbox.print.success("- Template encontrado")
+    module.template.data = JSON.parse(module.template.data)
+
+    const data = module.template.data
+
+    return data
+}
+
+const createModule = async (toolbox) =>
+{
+    toolbox.print.success("- Adicionando: <%- props.name %>/app.js")
+    await toolbox.template.generate({
+        template: 'app.js',
+        target: `<%- props.name %>/app.js`,
+    })
+
+    toolbox.print.success("- Adicionando: configurações do módulo no arquivo .env")
+    let env = `# Configurações do(a) <MODULE_NAME>\n`
+    env += `<MODULE_CONFIG>=\n`
+    toolbox.filesystem.append('.env', env)
+
+    toolbox.print.success("- Adicionando: módulo no arquivo service.js")
+    toolbox.filesystem.append('service.js', `require("./<%- props.name %>/app")\n`)
+}
