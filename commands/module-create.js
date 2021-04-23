@@ -12,6 +12,13 @@ const command = {
             target: `commands/add-${name}.js`,
         }) 
 
+        await toolbox.print.success(`- Adicionando comando: template:${name}`)
+        await toolbox.template.generate({
+            props: {name: name, upperName: upperName},
+            template: `commands/template-module.ejs`,
+            target: `commands/template-${name}.js`,
+        }) 
+
         await toolbox.print.success(`- Adicionando diretório: docs`)
         await toolbox.filesystem.dir('docs')
 
@@ -31,6 +38,10 @@ const command = {
 
         await toolbox.print.success(`- Adicionando diretório: templates`)
         await toolbox.filesystem.dir('templates/domain')
+        await toolbox.template.generate({
+            template: `templates/template.json`,
+            target: `templates/template.json`,
+        }) 
 
         await toolbox.print.success(`- Adicionando: gitignore`)
         await toolbox.template.generate({

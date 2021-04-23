@@ -1,0 +1,13 @@
+const command = {
+    name: 'template:<%- props.name %>',
+    description: 'Gera um template de configuração para instalação do(a) <MODULE_NAME>',
+    run: async toolbox => {
+        toolbox.print.success("- Adicionando: <%- props.name %>.json")
+        await toolbox.template.generate({
+            template: 'template.json',
+            target: `<%- props.name %>.json`,
+        })
+    }
+}
+
+module.exports = command
